@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: lightyellow;
+    flex-direction: column; /* Stack items vertically */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack heart and text vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.heart {
+    background: deeppink;
+    position: relative;
+    height: 110px;
+    width: 110px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transform: rotate(-45deg) scale(1);
+    cursor: pointer;
+    animation: pulse 1s linear infinite;
+}
+
+        @keyframes pulse {
+            0% {
+                transform: rotate(-45deg) scale(1.07);
+            }
+            50% {
+                transform: rotate(-45deg) scale(1.0);
+            }
+            100% {
+                transform: rotate(-45deg) scale(0.8);
+            }
+        }
+.heart::after {
+    background: inherit;
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    right: -50%;
+    height: 110px;
+    width: 110px;
+    box-shadow: -10px deeppink;
+}
+
+.heart::before {
+    background: inherit;
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50%;
+    height: 110px;
+    width: 110px;
+    box-shadow: -10px deeppink;
+}
+
+.instruction {
+    font-size: 0.7rem;
+    color: white; 
+    text-align: center; 
+    margin-top:-4.5rem;
+    z-index: 2;
+}
+
+h1{
+  margin-top: 2.5rem;
+}
